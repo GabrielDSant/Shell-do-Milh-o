@@ -1,0 +1,10 @@
+{
+    "1": {
+        "questao": "Qual algoritmo de codificação utilizado para cifrar o texto Q3VyaW9zbw== ?\n(a)Hex\n(b)Base64\n(c)MD5\n(d)URL",
+        "resposta": "b"
+    },
+    "2": {
+        "questao": "Qual a utilidade do Robots.txt em um site ?\n(a)Inserir IA's de anuncios que melhoram a experiência do usuário.\n(b)Definir nomes a bots anti-ddos.\n(c)Paginas que utilizam captcha.\n(d)É um arquivo que define instruções aos robôs de buscadores.",
+        "resposta": "d"
+    }
+}
