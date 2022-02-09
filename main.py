@@ -1,11 +1,14 @@
 #https://github.com/cherryWood55/Quiz-Game/blob/master/question.py
-from doctest import testfile
 import random
 import json
+from traceback import format_list
 import cowsay
 
 varbanner = ['1', '2', '3']
 temas = ['Red', 'Blue']
+questao_selecionada = range(1, 2)
+
+
 
 
 #iniciar o jogo com banner 
@@ -14,7 +17,6 @@ def banners():
     print (''.join([line for line in banner]))
     menu()
     
-
 #usuário entrando no "Menu" do jogo
 def menu():
     print("Bem-vindo ao shell do milhão :)\nPara o jogo iniciar escolha o tema da vez.\n \n|Red| para perguntas focadas no red team.\n|Blue| para perguntas focadas no blue team.")
@@ -29,7 +31,7 @@ def menu():
 def tema(arquivo):
     with open ('./temas/'+arquivo+'.json', 'r') as temajson:
         opçoesjson = json.load(temajson)
-        print(cowsay.cow(opçoesjson[random.choice(["1", "2"])]["questao"]))
+        print(cowsay.cow(opçoesjson[random.choice('"'+questao_selecionada+'"')]["questao"]))
     #forma de chamar bagulho do json é aqui em cima em to com sono
 
 #mostrar perguntas ligadas ao tema do arquivo json
