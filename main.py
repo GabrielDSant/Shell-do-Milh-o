@@ -1,15 +1,18 @@
 #https://github.com/cherryWood55/Quiz-Game/blob/master/question.py
 import random
 import json
-from traceback import format_list
 import cowsay
 
 varbanner = ['1', '2', '3']
 temas = ['Red', 'Blue']
-questao_selecionada = range(1, 2)
 
+#Tentando criar uma lista de numeros strings DEU CERTO DEUS MUITO OBRIGADO NUNCA FUI TRSTE
 
+ListaDeNumero = range(1,20)
 
+lista_questoes = [str(x) for x in ListaDeNumero]
+
+questoes_ja_foram = []
 
 #iniciar o jogo com banner 
 def banners():
@@ -27,21 +30,19 @@ def menu():
         print("tema não encontrado")
 
 #Perguntar ao jogador qual o tema 
-#ele retorna o json do tema para a função tema...
 def tema(arquivo):
     with open ('./temas/'+arquivo+'.json', 'r') as temajson:
-        opçoesjson = json.load(temajson)
-        print(cowsay.cow(opçoesjson[random.choice('"'+questao_selecionada+'"')]["questao"]))
-    #forma de chamar bagulho do json é aqui em cima em to com sono
-
+        return temajson
+    
 #mostrar perguntas ligadas ao tema do arquivo json
 def pergunta(questão):
     pass
+
 #Função que responde a pergunta
 def resposta(escolha):
     pass
 
-#Verificar resposta"""""
+#Verificar resposta
 def corretor():
     pass
 
