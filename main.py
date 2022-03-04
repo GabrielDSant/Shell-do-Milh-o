@@ -32,8 +32,8 @@ def menu():
 #Perguntar ao jogador qual o tema 
 def tema(arquivo):
     with open ('./temas/'+arquivo+'.json', 'r') as temajson:
-        return temajson
-    
+        print(cowsay.cow(json.load(temajson)["2"]["questao"]))
+
 #mostrar perguntas ligadas ao tema do arquivo json
 def pergunta(questão):
     pass
@@ -52,4 +52,5 @@ def pontos():
 
 #main
 if __name__ == '__main__':
-    banners()
+    print(testelista)
+    #banners()
