@@ -34,7 +34,7 @@ def tema(arquivo):
     with open ('./temas/'+arquivo+'.json', 'r') as temajson:
         questão = cowsay.cow(json.load(temajson)[random.choice(lista_questoes)]["questao"])
         print(questão)
-        #resposta = input("Espero que você tenha estudado... Qual é a correta ? :")
+        resposta = input("Espero que você tenha estudado... Qual é a correta ? :")
 
 #mostrar perguntas ligadas ao tema do arquivo json
 def pergunta(questão):
