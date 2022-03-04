@@ -8,11 +8,11 @@ temas = ['Red', 'Blue']
 
 #Tentando criar uma lista de numeros strings DEU CERTO DEUS MUITO OBRIGADO NUNCA FUI TRSTE
 
-ListaDeNumero = range(1,20)
+ListaDeNumero = range(1, 2)
 
 lista_questoes = [str(x) for x in ListaDeNumero]
 
-questoes_ja_foram = []
+#Função que administra questões que já foram.
 
 #iniciar o jogo com banner 
 def banners():
@@ -32,7 +32,9 @@ def menu():
 #Perguntar ao jogador qual o tema 
 def tema(arquivo):
     with open ('./temas/'+arquivo+'.json', 'r') as temajson:
-        print(cowsay.cow(json.load(temajson)["2"]["questao"]))
+        questão = cowsay.cow(json.load(temajson)[random.choice(lista_questoes)]["questao"])
+        print(questão)
+        #resposta = input("Espero que você tenha estudado... Qual é a correta ? :")
 
 #mostrar perguntas ligadas ao tema do arquivo json
 def pergunta(questão):
@@ -52,5 +54,4 @@ def pontos():
 
 #main
 if __name__ == '__main__':
-    print(testelista)
-    #banners()
+    banners()
