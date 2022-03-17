@@ -1,1 +1,3 @@
 #Shell do milhão
+
+Um quiz sobre SegInfo pra fixar na minha cabeça algumas coisas...
