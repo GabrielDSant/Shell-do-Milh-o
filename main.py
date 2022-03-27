@@ -1,4 +1,5 @@
 #https://github.com/cherryWood55/Quiz-Game/blob/master/question.py
+from cgi import print_arguments
 import random
 import json
 import cowsay
@@ -12,12 +13,16 @@ ListaDeNumero = range(1, 2)
 
 lista_questoes = [str(x) for x in ListaDeNumero]
 
-#Função que administra questões que já foram.
+#Sorteio da questão
+def sorteio():
+    tei = random.choice(lista_questoes)
+    return tei
 
 #iniciar o jogo com banner 
 def banners():
     banner = open ('./banners/'+random.choice(varbanner)+'.txt', 'r')
     print (''.join([line for line in banner]))
+    sorteio()
     menu()
     
 #usuário entrando no "Menu" do jogo
@@ -32,18 +37,20 @@ def menu():
 #Perguntar ao jogador qual o tema 
 def tema(arquivo):
     with open ('./temas/'+arquivo+'.json', 'r') as temajson:
-        questão = cowsay.cow(json.load(temajson)[random.choice(lista_questoes)]["questao"])
-        print(questão)
-        resposta = input("Espero que você tenha estudado... Qual é a correta ? :")
+        cow = cowsay.cow(json.load(temajson)[sorteio()]["questao"])
+        if cow:
+            pergunta(cow)
 
 #mostrar perguntas ligadas ao tema do arquivo json
 def pergunta(questão):
-    pass
-
+    print(questão)
+    resposta_user = input("Espero que você tenha estudado... Qual é a correta ?: ")
+    if resposta_user:
+        resposta(resposta_user)
 #Função que responde a pergunta
 def resposta(escolha):
-    pass
-
+        if escolha == "ADD arquivo json e verificar resposta to com sono":
+        pass
 #Verificar resposta
 def corretor():
     pass
@@ -51,6 +58,7 @@ def corretor():
 #Sistema de pontuação
 def pontos():
     pass
+
 
 #main
 if __name__ == '__main__':
